@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\white\Desktop\My Projects\Show Stoppers\static\main.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+
+
+    <title>Show Stoppers- Go to all the gigs!</title>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div id="main_logo">
+
+            <!-- MAKE IMAGE/LOGO -->
+            <h1>Show Stoppers</h1>
+
+        </div>
+    
+        <div id="valid_username"><!-- JQUERY MSG HERE --></div>
+        
+        <div id="login_header">
+            <div id="flash_msg">
+                {% with messages = get_flashed_messages() %}     
+                    {% if messages %}                            
+                        {% for message in messages %}
+                            <p>{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+
+            <h4>Log In</h4>
+
+            <form id="login_form" action="   " method="POST">
+                <input id="email" type="text" name="email" placeholder="email@email.com">
+                <input id="pw" type="password" name="pw" placeholder="Password">
+                <input id="login_btn" type="submit" value="log In">
+            </form>
+
+        </div>
+
+        <hr>
+
+        <h4>Sign Up</h4>
+
+        <div id="signup">
+            <form id="add_user_form" action="   " method="POST">
+                <input id="fname" type="text" name="fname" placeholder="First Name">
+                <input id="lname" type="text" name="lname" placeholder="Last Name">
+                <input id="email" type="text" name="email" placeholder="Email">
+                <input id="pw" type="password" name="pw" placeholder="Password">
+                <input id="con_pw" type="password" name="con_pw" placeholder="Confirm Password">
+                <input id="sign_up" type="submit" value="Sign Up">
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+</html>
