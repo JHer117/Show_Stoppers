@@ -47,6 +47,11 @@ hr{
     color: rgb(242,19,219);
 }
 
+
+#flash_msg p {
+    color: rgb(242,19,219);
+}
+
 h2{
     border-radius: 4px;
     display: inline-block;
