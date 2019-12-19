@@ -1,0 +1,80 @@
+*{
+    color: rgb(2,231,247);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url("https://i.imgur.com/GIwwXZl.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+body{
+    margin: 0 auto;
+    width: 0 auto;
+    background-color: rgb(50, 27, 177);
+}
+
+
+
+#wrapper{
+    text-align: center;
+}
+
+
+
+#main_logo img{
+    width: 500px;
+    margin-bottom: 10px;
+    margin-top: 45px;
+}
+
+#gig_choices{
+    text-align: initial;
+    margin-top: 90px;
+    padding-left: 525px;
+}
+
+#gig_choices select{
+    display: block;
+    color: rgb(242,19,219);
+}
+
+#select_band{
+    margin-bottom: 40px;
+}
+
+#select_venue{
+    margin-bottom: 40px;
+}
+
+#select_date{
+    margin-bottom: 40px;
+}
+
+#rsvp_btn{
+    background-color: rgb(110,26,143);
+    color:rgb(2,231,247);
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 1%;
+    width: 174px;
+    border: 3px inset rgb(47,35,63);
+    border-radius: 5px;
+    position: absolute;
+    right: 505px;
+    top: 280px;
+
+}
+
+#bot_logout{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+

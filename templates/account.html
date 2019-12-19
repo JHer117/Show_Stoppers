@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" type="text/css" href="C:\Users\white\Desktop\My Projects\Show Stoppers\static\main.css">
+    <link rel="stylesheet" type="text/css" href="C:\Users\white\Desktop\My Projects\Show Stoppers\static\account.css">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='account.css') }}">
 
 
     <title>Show Stoppers- Go to all the gigs!</title>
@@ -40,36 +40,36 @@
         <hr>
 
         <div id="gigs_attended">
-
             <table>
                 <tr>
                     <th>Gigs Attended</th>                    
                 </tr>                
                 
+                <!-- for loop start -->
                 <tr>
                     <td>{{gig name attended}}</td>                           
                 </tr>
-                    
+            <!-- for loop end -->
             </table> 
 
         </div>
         
         <div id="gigs_rsvp">
-
+            
             <table>
                 <tr>
                     <th>Gigs RSVP'd</th>                    
                 </tr>
-                             
+                <!-- for loop start  -->
                 <tr>
                     <td>{{gig name rsvpd}}</td>                           
                 </tr>
-                    
+                <!-- for loop end -->
             </table> 
 
         </div>
 
-        <a href="/logout">Logout</a>
+        <a id="bot_logout" href="/logout">Logout</a>
 
     </div>
 

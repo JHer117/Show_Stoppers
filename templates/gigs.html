@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\white\Desktop\My Projects\Show Stoppers\static\gigs.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='gigs.css') }}">
+
+    <title>Show Stoppers- Go to all the gigs!</title>
+
+
+</head>
+<body>
+    
+
+    <div id="wrapper">
+
+        <div id="header">
+
+            <a href="/account/{{user_id}}">Back To Account</a>
+
+            
+            <div id="main_logo">
+                <img src="https://i.imgur.com/ilfmFNF.png" alt="show_stoppers_logo">
+                
+            </div>
+            
+        </div>
+        
+
+        <div id="gig_choices">
+
+            <form action="/gig_choices">
+                <!-- for loop start -->
+                <select id="select_band">
+                    <option selected="selected">Choose A Band</option>
+                    <option value="{{}}">{{}}</option>
+                </select> 
+                <select id="select_venue">
+                    <option selected="selected">Choose A Venue</option>
+                    <option value="{{}}">{{}}</option>
+                </select> 
+                <select id="select_date">
+                    <option selected="selected">Choose A Date</option>      
+                    <option value="{{}}">{{}}</option>
+                </select> 
+                <!-- for loop end -->
+                <input id="rsvp_btn" type="submit" value="RSVP">
+            </form>
+
+
+        </div>
+        
+        
+        
+        <a id="bot_logout" href="/logout">Logout</a>
+
+    </div>
+
+
+
+</body>
+</html>
