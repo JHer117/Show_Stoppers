@@ -28,16 +28,16 @@
     
         <div id="valid_username"><!-- JQUERY MSG HERE --></div>
         
+        <div id="flash_msg">
+            {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         <div id="login_header">
-            <div id="flash_msg">
-                {% with messages = get_flashed_messages() %}     
-                    {% if messages %}                            
-                        {% for message in messages %}
-                            <p>{{message}}</p>                   
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
 
 
             <h2>Log In </h2>

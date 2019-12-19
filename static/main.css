@@ -26,7 +26,7 @@ body{
 #main_logo img{
     width: 500px;
     margin-bottom: 10px;
-    margin-top: 15px;
+    margin-top: 75px;
 }
 
 hr{
@@ -35,7 +35,7 @@ hr{
 }
 
 #login_header{
-    margin-top: 75px;
+    margin-top: 40px;
     margin-bottom: 50px;
 }
 
