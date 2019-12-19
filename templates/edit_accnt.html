@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\white\Desktop\My Projects\Show Stoppers\static\edit_accnt.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_accnt.css') }}">
+
+
+    <title>Show Stoppers- Go to all the gigs!</title>
+
+    
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div id="header">
+
+            <h4>{{fName}}'s account</h4>
+
+            <a href="/account/{{user_id}}">Back To Account</a>
+
+            <div id="main_logo">
+                <img src="https://i.imgur.com/ilfmFNF.png" alt="show_stoppers_logo">
+                
+            </div>
+
+        </div>
+    
+        <div id="valid_username"><!-- JQUERY MSG HERE --></div>
+        
+        <div id="edit_accnt">
+            <div id="flash_msg">
+                {% with messages = get_flashed_messages() %}     
+                    {% if messages %}                            
+                        {% for message in messages %}
+                            <p>{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+
+            <h2>Update Account Info</h2>
+
+            <div id="edit_info">
+                <form id="edit_info_form" action="   " method="POST">
+                    <input class="inpt_field" type="text" style="border: none;" name="fname" placeholder="{{First Name}}">
+                    <input class="inpt_field" type="text" style="border: none;" name="lname" placeholder="{{Last Name}}">
+                    <input class="inpt_field" type="text" style="border: none;" name="email" placeholder="{{Email}}">
+                    <input id="update_info_btn" type="submit" value="Update">
+                </form>
+            </div>
+            
+
+        </div>
+
+
+        <h2>Update Password </h2>
+
+        <div id="signup">
+            <form id="edit_pw_form" action="   " method="POST">
+                <input class="inpt_field" type="password" style="border: none;" name="old_pw" placeholder="Old Password">
+                <input class="inpt_field" type="password" style="border: none;" name="pw" placeholder="New Password">
+                <input class="inpt_field" type="password" style="border: none;" name="con_pw" placeholder="Confirm New Password">
+                <input id="update_pw_btn" type="submit" value="Update">
+            </form>
+        </div>
+
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+    
+</body>
+</html>

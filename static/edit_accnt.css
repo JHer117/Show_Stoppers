@@ -1,5 +1,5 @@
 *{
-    color: rgb(4, 148, 153);
+    color: rgb(2,231,247);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -39,7 +39,7 @@ hr{
     margin-bottom: 50px;
 }
 
-#login_header h2{
+#edit_accnt h2{
     border-radius: 4px;
     display: inline-block;
     border-style: groove none none groove ;
@@ -62,17 +62,16 @@ h2{
 
 
 input{
-    color: rgb(255, 85, 184);
     background: transparent;
 }
 
-#login_form .inpt_field{
+#edit_info_form .inpt_field{
     border-bottom: 3px;
     border-color: rgb(47,35,63);
     color: rgb(255, 85, 184);
 }
 
-#login_btn{
+#update_info_btn{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
     display: inline-block;
@@ -83,19 +82,18 @@ input{
     border-radius: 5px;
 }
 
-#sign_up_btn{
+#update_pw_btn{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
     display: inline-block;
     margin-bottom: 50px;
     padding: 1%;
     width: 174px;
-    border: 3px inset rgb(47,35,63);;
+    border: 3px inset rgb(47,35,63);
     border-radius: 5px;
 }
 
-
-#add_user_form .inpt_field{
+#edit_pw_form .inpt_field{
     border-bottom: 3px;
     border-color: rgb(47,35,63);
     color: rgb(255, 85, 184);
