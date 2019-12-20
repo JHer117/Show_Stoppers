@@ -26,7 +26,7 @@ body{
 #main_logo img{
     width: 500px;
     margin-bottom: 10px;
-    margin-top: 75px;
+    margin-top: 10px;
 }
 
 hr{
@@ -35,8 +35,8 @@ hr{
 }
 
 #login_header{
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
 
 #login_header h2{
@@ -66,13 +66,22 @@ input{
     background: transparent;
 }
 
+#email{
+    display: inline-block;
+    margin-left: 75px;
+}
 
-
+#pw{
+    display: inline-block;
+    margin-left: 20px;
+}
 
 #login_form .inpt_field{
     text-decoration: underline;
     text-decoration-color: rgb(2,231,247);
     color: rgb(255, 85, 184);
+    margin-bottom: 40px;
+    margin-top: 25px;
 }
 
 #login_btn{
@@ -80,26 +89,61 @@ input{
     color:rgb(2,231,247);
     display: inline-block;
     margin-bottom: 50px;
-    padding: 1%;
-    width: 174px;
+    padding: 12px;
+    width: 170px;
     border: 3px inset rgb(47,35,63);
     border-radius: 5px;
+    display: block;
+    margin-left: 44.5%;
 }
 
-#sign_up_btn{
-    background-color: rgb(110,26,143);
-    color:rgb(2,231,247);
-    display: inline-block;
-    margin-bottom: 50px;
-    padding: 1%;
-    width: 174px;
-    border: 3px inset rgb(47,35,63);;
-    border-radius: 5px;
-}
 
 
 #add_user_form .inpt_field{
     text-decoration: underline;
     text-decoration-color: rgb(2,231,247);
     color: rgb(255, 85, 184);
+    margin-top: 25px;
 }
+
+#fname{
+    margin-left: 78px;
+}
+
+#fname, lname{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#em_signup{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 715px;
+}
+
+#pw_signup{
+    margin-left: 75px;
+}
+
+#pw_signup, con_pw{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+
+
+#sign_up_btn{
+    background-color: rgb(110,26,143);
+    color:rgb(2,231,247);
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px;
+    width: 170px;
+    border: 3px inset rgb(47,35,63);;
+    border-radius: 5px;
+    display: block;
+    margin-left: 44.5%;
+}
+
+
