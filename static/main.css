@@ -66,9 +66,12 @@ input{
     background: transparent;
 }
 
+
+
+
 #login_form .inpt_field{
-    border-bottom: 3px;
-    border-color: rgb(47,35,63);
+    text-decoration: underline;
+    text-decoration-color: rgb(2,231,247);
     color: rgb(255, 85, 184);
 }
 
@@ -96,7 +99,7 @@ input{
 
 
 #add_user_form .inpt_field{
-    border-bottom: 3px;
-    border-color: rgb(47,35,63);
+    text-decoration: underline;
+    text-decoration-color: rgb(2,231,247);
     color: rgb(255, 85, 184);
 }
