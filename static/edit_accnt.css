@@ -26,7 +26,15 @@ body{
 #main_logo img{
     width: 500px;
     margin-bottom: 10px;
-    margin-top: 15px;
+    margin-top: 50px;
+}
+
+
+#top_logout{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 hr{
@@ -65,36 +73,95 @@ input{
     background: transparent;
 }
 
+
+#fname{
+    margin-top: 25px;
+    margin-left: 78px;
+}
+
+#fname, lname{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#em{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 683px;
+    margin-top: 15px;
+    text-align: center;
+
+}
+
+
 #edit_info_form .inpt_field{
     border-bottom: 3px;
     border-color: rgb(47,35,63);
     color: rgb(255, 85, 184);
+
 }
 
 #update_info_btn{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
     display: inline-block;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 1%;
     width: 174px;
     border: 3px inset rgb(47,35,63);
     border-radius: 5px;
+    margin-top: 30px;
 }
+
+hr{
+    border: 2px solid rgb(47,35,63);
+    
+}
+
 
 #update_pw_btn{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
-    display: inline-block;
+    display: block;
     margin-bottom: 50px;
     padding: 1%;
     width: 174px;
     border: 3px inset rgb(47,35,63);
     border-radius: 5px;
+    margin-left:  auto;
+    margin-right: auto;
 }
 
 #edit_pw_form .inpt_field{
     border-bottom: 3px;
     border-color: rgb(47,35,63);
     color: rgb(255, 85, 184);
+}
+
+
+#old_pw{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 685px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#new_pw{
+    margin-top: 25px;
+    margin-left: 55px;
+}
+
+#new_pw, con_pw{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+
+
+#bot_logout{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }

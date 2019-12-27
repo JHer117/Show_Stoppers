@@ -14,15 +14,13 @@
 
     
 </head>
-<body>
+<body> 
 
     <div id="wrapper">
 
         <div id="header">
 
-            <h4>{{fName}}'s account</h4>
-
-            <a href="/account/{{user_id}}">Back To Account</a>
+            <a id="top_logout" href="/account/{{user_id}}">Back To Account</a>
 
             <div id="main_logo">
                 <img src="https://i.imgur.com/ilfmFNF.png" alt="show_stoppers_logo">
@@ -49,9 +47,9 @@
 
             <div id="edit_info">
                 <form id="edit_info_form" action="   " method="POST">
-                    <input class="inpt_field" type="text" style="border: none;" name="fname" placeholder="{{First Name}}">
-                    <input class="inpt_field" type="text" style="border: none;" name="lname" placeholder="{{Last Name}}">
-                    <input class="inpt_field" type="text" style="border: none;" name="email" placeholder="{{Email}}">
+                    <input id="fname" class="inpt_field" type="text" style="border: none;" name="fname" placeholder="{{First Name}}">
+                    <input id="lname" class="inpt_field" type="text" style="border: none;" name="lname" placeholder="{{Last Name}}">
+                    <input id="em" class="inpt_field" type="text" style="border: none;" name="email" placeholder="{{Email}}">
                     <input id="update_info_btn" type="submit" value="Update">
                 </form>
             </div>
@@ -59,20 +57,21 @@
 
         </div>
 
+        <hr>
 
         <h2>Update Password </h2>
 
         <div id="signup">
             <form id="edit_pw_form" action="   " method="POST">
-                <input class="inpt_field" type="password" style="border: none;" name="old_pw" placeholder="Old Password">
-                <input class="inpt_field" type="password" style="border: none;" name="pw" placeholder="New Password">
-                <input class="inpt_field" type="password" style="border: none;" name="con_pw" placeholder="Confirm New Password">
+                <input id="old_pw" class="inpt_field" type="password" style="border: none;" name="old_pw" placeholder="Old Password">
+                <input id="new_pw" class="inpt_field" type="password" style="border: none;" name="pw" placeholder="New Password">
+                <input id="con_pw" class="inpt_field" type="password" style="border: none;" name="con_pw" placeholder="Confirm New Password">
                 <input id="update_pw_btn" type="submit" value="Update">
             </form>
         </div>
 
 
-        <a href="/logout">Logout</a>
+        <a id="bot_logout" href="/logout">Logout</a>
 
     </div>
 
