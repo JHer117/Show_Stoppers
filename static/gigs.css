@@ -23,7 +23,12 @@ body{
     text-align: center;
 }
 
-
+#accnt_link{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
 #main_logo img{
     width: 500px;
@@ -33,7 +38,7 @@ body{
 
 #gig_choices{
     text-align: initial;
-    margin-top: 90px;
+    margin-top: 190px;
     padding-left: 525px;
 }
 
@@ -58,7 +63,7 @@ body{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 135px;
     margin-bottom: 50px;
     padding: 1%;
     width: 174px;
