@@ -23,7 +23,7 @@
 
         <div id="header">
 
-            <a id="top_logout" href="/account/{{user_id}}">Back To Account</a>
+            <a id="top_logout" href="/ShowStoppers">Back To Account</a>
 
             <div id="main_logo">
                 <img src="https://i.imgur.com/ilfmFNF.png" alt="show_stoppers_logo">
@@ -49,10 +49,10 @@
             <h2>Update Account Info</h2>
 
             <div id="edit_info">
-                <form id="edit_info_form" action="   " method="POST">
-                    <input id="fname" class="inpt_field" type="text" style="border: none;" name="fname" placeholder="{{First Name}}">
-                    <input id="lname" class="inpt_field" type="text" style="border: none;" name="lname" placeholder="{{Last Name}}">
-                    <input id="em" class="inpt_field" type="text" style="border: none;" name="email" placeholder="{{Email}}">
+                <form id="edit_info_form" action="/edit/{{user['id']}}/update" method="POST">
+                    <input id="fname" class="inpt_field" type="text" name="fname" placeholder="{{user['first_name']}}">
+                    <input id="lname" class="inpt_field" type="text" name="lname" placeholder="{{user['last_name']}}">
+                    <input id="em" class="inpt_field" type="text" name="email" placeholder="{{user['email']}}">
                     <input id="update_info_btn" type="submit" value="Update">
                 </form>
             </div>
@@ -65,7 +65,7 @@
         <h2>Update Password </h2>
 
         <div id="signup">
-            <form id="edit_pw_form" action="   " method="POST">
+            <form id="edit_pw_form" action="/edit/{{user['id']}}/pwupdate" method="POST">
                 <input id="old_pw" class="inpt_field" type="password" style="border: none;" name="old_pw" placeholder="Old Password">
                 <input id="new_pw" class="inpt_field" type="password" style="border: none;" name="pw" placeholder="New Password">
                 <input id="con_pw" class="inpt_field" type="password" style="border: none;" name="con_pw" placeholder="Confirm New Password">
