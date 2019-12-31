@@ -236,27 +236,27 @@ def updatePW(user_id):
             npwis_valid = True
     if opwis_valid and npwis_valid:
         mysql = connectToMySQL("ShowStoppers")
-        query = "SELECT * FROM users WHERE users.password = %(opw)s"
+        query = "SELECT * FROM users WHERE id = %(id)s"
         data = {
-            "opw": request.form['old_pw']
+        "id": session['user_id']
         }
         user = mysql.query_db(query, data)
         if user:
             hashed_password = user[0]['password']
             if bcrypt.check_password_hash(hashed_password, request.form['old_pw']):
-                session['user_id'] = user[0]['id']
+                new_pw_hash = bcrypt.generate_password_hash(request.form['pw'])
+                mysql = connectToMySQL("ShowStoppers")
                 query = "UPDATE users SET password = %(pw)s, updated_at = NOW() WHERE id = %(uid)s"
                 data = {
-                "data_id": session[SESSION_KEY],
                 "uid": user_id,
-                "pw": request.form['pw'],
+                "pw": new_pw_hash,
                 }
                 flash ("Password change succeeded.")
                 mysql.query_db(query, data)
                 return redirect("/edit/" + user_id + "/info")
-            else:
-                flash("Password is invalid.")
-                return redirect("/")
+        else:
+            flash("Password is invalid.")
+            return redirect("/edit/" + user_id + "/info")
     flash ("Password change failed.")
     return redirect("/edit/" + user_id + "/info")
 @app.route("/gigs")
