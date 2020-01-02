@@ -37,7 +37,7 @@ def login():
     return redirect("/")
 @app.route("/registration", methods=['POST'])
 def registration():
-    fnis_valid = False
+    fnis_valid = False           
     lnis_valid = False
     emis_valid = False
     pwis_valid = False
@@ -103,6 +103,9 @@ def registration():
 def acct():
     if SESSION_KEY not in session:
         return redirect("/")
+    
+    # MAKE QUERIES FOR "GIGS ATTENDE", "GIGS RSVPD"
+    
     mysql = connectToMySQL("ShowStoppers")
     query = "SELECT * FROM users WHERE users.id = %(data_id)s"
     data = {
@@ -261,12 +264,19 @@ def updatePW(user_id):
     return redirect("/edit/" + user_id + "/info")
 @app.route("/gigs")
 def gigs():
+    
+    # IS THE GIG DATA PRE INSERTED??
+    
     mysql = connectToMySQL("ShowStoppers")
     query = "SELECT * FROM shows WHERE id = %(id)s"
     data = {
         'id': 1,
     }
     mysql.query_db(query, data)
-    return render_template("gigs.html")
+    return render_template("gigs.html" #, GIG QUERY TO BE PASSED INTO TEMPLATE)
+                           
+#TODO GIG RSVPD BUTTON ROUTE
+#                       
+
 if __name__=="__main__":
     app.run(debug=True)
