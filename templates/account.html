@@ -41,21 +41,6 @@
         </div>
 
         <hr>
-
-        <div id="gigs_attended">
-            <table>
-                <tr>
-                    <th>Gigs Attended</th>                    
-                </tr>                
-                
-            <!-- for loop start -->
-                <!-- <tr>
-                    <td>gig name attended</td>                           
-                </tr> -->
-            <!-- for loop end -->
-            </table> 
-
-        </div>
         
         <div id="gigs_rsvp">
             
@@ -64,13 +49,32 @@
                     <th>Gigs RSVP'd</th>                    
                 </tr>
                 <!-- for loop start  -->
-                <!-- <tr>
+                <tr>
                     <td>gig name rsvpd</td>                           
-                </tr> -->
+                    <td><a href="/rsvp_to_gig">Mark as Attended</a></td>  
+                </tr>
                 <!-- for loop end -->
             </table> 
 
         </div>
+        <div id="gigs_attended">
+            <table>
+                <tr>
+                    <th>Gigs Attended</th>                    
+                </tr>                
+                
+            <!-- for loop start -->
+                <tr>
+                    <td>gig name attended</td>
+                </tr>
+            
+                
+                    
+            <!-- for loop end -->
+            </table> 
+
+        </div>
+        
 
         <a id="bot_logout" href="/logout">Logout</a>
 

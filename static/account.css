@@ -70,20 +70,25 @@ hr{
 
 #gigs_attended{
     display: inline-block;
-    margin-right: 85px;
-    margin-left: -22px;
-
+    
 }
 
 #gigs_rsvp{
     display: inline-block;
+    margin-right: 85px;
+    margin-left: 0px;
 }
 
+
+#gigs_rsvp a{
+    color: rgb(242,19,219);
+    
+}
 
 #gigs_attended th{
     border-radius: 4px;
     display: inline-block;
-    border-style: groove none none groove ;
+    border-style:groove groove none none;
     border-color: rgb(2,231,247);
     color: rgb(242,19,219);
     margin-bottom: 20px;
@@ -94,7 +99,7 @@ hr{
 #gigs_rsvp th{
     border-radius: 4px;
     display: inline-block;
-    border-style: groove groove none none ;
+    border-style: groove none none groove ;
     color: rgb(242,19,219);
     border-color: rgb(2,231,247);
     margin-bottom: 20px;
