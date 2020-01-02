@@ -40,17 +40,21 @@
                 <!-- for loop start -->
                 <select id="select_band">
                     <option selected="selected">Choose A Band</option>
-                    <option value="{{shows['band_name']}}">
-                        {{shows.band_name}}
-                    </option>
+                    {% for show in shows %}
+                        <option  value="{{ show['band_name'] }}">{{show['band_name']}}</option>
+                    {% endfor %}
                 </select> 
                 <select id="select_venue">
                     <option selected="selected">Choose A Venue</option>
-                    <option value="Na"></option>
+                    {% for show in shows %}
+                        <option  value="{{ show['location'] }}">{{show['location']}}</option>
+                    {% endfor %}
                 </select> 
                 <select id="select_date">
                     <option selected="selected">Choose A Date</option>      
-                    <option value="Na"></option>
+                    {% for show in shows %}
+                        <option  value="{{ show['date'] }}">{{show['date']}}</option>
+                    {% endfor %}
                 </select> 
                 <!-- for loop end -->
                 <input id="rsvp_btn" type="submit" value="RSVP">
