@@ -264,18 +264,12 @@ def updatePW(user_id):
     return redirect("/edit/" + user_id + "/info")
 @app.route("/gigs")
 def gigs():
-    
     # IS THE GIG DATA PRE INSERTED??
-    
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT * FROM shows WHERE id = %(id)s"
-    data = {
-        'id': 1,
-    }
-    mysql.query_db(query, data)
-    return render_template("gigs.html" #, GIG QUERY TO BE PASSED INTO TEMPLATE)
-                           
-#TODO GIG RSVPD BUTTON ROUTE
+    query = "SELECT * FROM shows;"
+    bandN = mysql.query_db(query)
+    return render_template("gigs.html", shows = bandN)        
+#GIG RSVPD BUTTON ROUTE
 #                       
 
 if __name__=="__main__":
