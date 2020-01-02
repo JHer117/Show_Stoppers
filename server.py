@@ -262,6 +262,8 @@ def updatePW(user_id):
 @app.route("/gigs")
 def gigs():
     mysql = connectToMySQL("ShowStoppers")
+    query = "SELECT * FROM shows"
+    mysql.query_db(query)
     return render_template("gigs.html")
 if __name__=="__main__":
     app.run(debug=True)
