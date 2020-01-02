@@ -34,13 +34,15 @@
         </div>
         
 
-        <div id="gig_choices">
+        <div id="gig_choices">Test</div>
 
             <form action="/gig_choices">
                 <!-- for loop start -->
                 <select id="select_band">
                     <option selected="selected">Choose A Band</option>
-                    <option value="Na"></option>
+                    <option value="{{shows['band_name']}}">
+                        {{shows.band_name}}
+                    </option>
                 </select> 
                 <select id="select_venue">
                     <option selected="selected">Choose A Venue</option>
