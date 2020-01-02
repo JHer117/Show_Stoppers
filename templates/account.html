@@ -23,7 +23,7 @@
 
         <div id="header">
 
-            <h4>{{fName}}'s account</h4>
+            <h4>{{user.first_name}} {{user.last_name}}'s account</h4>
 
             <a id="top_logout" href="/logout">Logout</a>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div id="buttons">
-            <a id="edit-btn" href="/edit/{{user_id}}/info"><button>Edit Info</button></a>
+            <a id="edit-btn" href="/edit/{{user['id']}}/info"><button>Edit Info</button></a>
 
             <a href="/gigs"><button>Find A Gig!</button></a>
         </div>
@@ -48,10 +48,10 @@
                     <th>Gigs Attended</th>                    
                 </tr>                
                 
-                <!-- for loop start -->
-                <tr>
-                    <td>{{gig name attended}}</td>                           
-                </tr>
+            <!-- for loop start -->
+                <!-- <tr>
+                    <td>gig name attended</td>                           
+                </tr> -->
             <!-- for loop end -->
             </table> 
 
@@ -64,9 +64,9 @@
                     <th>Gigs RSVP'd</th>                    
                 </tr>
                 <!-- for loop start  -->
-                <tr>
-                    <td>{{gig name rsvpd}}</td>                           
-                </tr>
+                <!-- <tr>
+                    <td>gig name rsvpd</td>                           
+                </tr> -->
                 <!-- for loop end -->
             </table> 
 
