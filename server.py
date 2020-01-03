@@ -266,7 +266,7 @@ def updatePW(user_id):
 def gigs():
     # IS THE GIG DATA PRE INSERTED??
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT * FROM shows;"
+    query = "SELECT shows.*, showsband.band_id, band.*, showsvenue.venue_id, venue.* FROM shows LEFT JOIN showsband ON shows.id=showsband.shows_id LEFT JOIN band ON showsband.band_id LEFT JOIN showsvenue ON shows.id=showsvenue.shows_id LEFT JOIN venue ON showsvenue.venue_id=venue.id"
     bandN = mysql.query_db(query)
     return render_template("gigs.html", shows = bandN)        
 #GIG RSVPD BUTTON ROUTE

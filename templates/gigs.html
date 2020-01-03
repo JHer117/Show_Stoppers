@@ -41,7 +41,7 @@
                 <select id="select_band">
                     <option selected="selected">Choose A Band</option>
                     {% for show in shows %}
-                        <option  value="{{ show['band_name'] }}">{{show['band_name']}}</option>
+                        <option  value="{{ show['title'] }}">{{show['title']}}</option>
                     {% endfor %}
                 </select> 
                 <select id="select_venue">
