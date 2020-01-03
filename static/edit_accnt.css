@@ -33,8 +33,8 @@ body{
 #top_logout{
     display: inline-block;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 1%;
+    right: 1%;
 }
 
 hr{
@@ -162,6 +162,6 @@ hr{
 #bot_logout{
     display: block;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1%;
+    right: 1%;
 }
