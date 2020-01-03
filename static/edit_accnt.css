@@ -76,7 +76,7 @@ input{
 
 #fname{
     margin-top: 25px;
-    margin-left: 78px;
+    margin-left: 0px;
 }
 
 #fname, lname{
@@ -87,7 +87,7 @@ input{
 #em{
     display: block;
     margin-bottom: 5px;
-    margin-left: 683px;
+    margin-left: 650px;
     margin-top: 15px;
     text-align: center;
 
@@ -142,7 +142,7 @@ hr{
 #old_pw{
     display: block;
     margin-bottom: 5px;
-    margin-left: 685px;
+    margin-left: 625px;
     margin-top: 15px;
     text-align: center;
 }
