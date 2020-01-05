@@ -267,7 +267,7 @@ def gigs():
     if SESSION_KEY not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT shows.*, showsband.band_id, band.*, showsvenue.venue_id, venue.* FROM shows LEFT JOIN showsband ON shows.id=showsband.shows_id LEFT JOIN band ON showsband.band_id LEFT JOIN showsvenue ON shows.id=showsvenue.shows_id LEFT JOIN venue ON showsvenue.venue_id=venue.id"
+    query = "SELECT shows.*, band.title, venue.location FROM shows LEFT JOIN band ON shows.band_id=band.id LEFT JOIN venue ON shows.venue_id=venue.id;"
     bandN = mysql.query_db(query)
     return render_template("gigs.html", shows = bandN)        
 #GIG RSVPD BUTTON ROUTE       
