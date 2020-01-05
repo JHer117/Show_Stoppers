@@ -36,7 +36,7 @@
 
         <div id="gig_choices">
 
-            <form action="/gig_choices">
+            <form action="/gig_Select" method="POST">
                 <!-- for loop start -->
                 <select id="select_band">
                     <option selected="selected">Choose A Band</option>
@@ -53,7 +53,7 @@
                 <select id="select_date">
                     <option selected="selected">Choose A Date</option>      
                     {% for show in shows %}
-                        <option  value="{{ show['start_time'] }}">{{show.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{show.end_time.strftime('%I%p')}}</option>
+                        <option  name ="mainID" value="{{ show['id'] }}">{{show.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{show.end_time.strftime('%I%p')}}</option>
                     {% endfor %}
                 </select> 
                 <!-- for loop end -->
