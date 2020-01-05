@@ -50,10 +50,10 @@
                         <option  value="{{ show['location'] }}">{{show['location']}}</option>
                     {% endfor %}
                 </select> 
-                <select id="select_date">
+                <select name ="mainID" id="select_date">
                     <option selected="selected">Choose A Date</option>      
                     {% for show in shows %}
-                        <option  name ="mainID" value="{{ show['id'] }}">{{show.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{show.end_time.strftime('%I%p')}}</option>
+                        <option  value="{{ show['id'] }}">{{show.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{show.end_time.strftime('%I%p')}}</option>
                     {% endfor %}
                 </select> 
                 <!-- for loop end -->
