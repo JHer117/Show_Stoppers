@@ -262,13 +262,15 @@ def updatePW(user_id):
             return redirect("/edit/" + user_id + "/info")
     flash ("Password change failed.")
     return redirect("/edit/" + user_id + "/info")
-@app.route("/gigs/<user_id>")
-def gigs(user_id):
+@app.route("/gigs")
+def gigs():
     if SESSION_KEY not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
     query = "SELECT shows.*, band.title, venue.location FROM shows LEFT JOIN band ON shows.band_id=band.id LEFT JOIN venue ON shows.venue_id=venue.id;"
     bandN = mysql.query_db(query)
+    session.get('user_id')
+    print(session.get('user_id'))
     return render_template("gigs.html", shows = bandN)        
 #GIG RSVPD BUTTON ROUTE
 @app.route("/gig_Select", methods=['POST'])
@@ -278,8 +280,8 @@ def gigSelect():
     mysql = connectToMySQL("ShowStoppers")
     query = "INSERT INTO attendedGigs (shows_id, users_id, attendedGig) VALUES %(sid)s, %(uid)s, 0"
     data = {
-        "uid": session[SESSION_KEY],
-        "sid": request.form['show["ID"]']
+        "uid": session.get('user_id'),
+        "sid": request.form['mainID']
     }
     mysql.query_db(query, data)
     flash("Data Successful")
