@@ -48,12 +48,10 @@
                 <tr>
                     <th>Gigs RSVP'd</th>                    
                 </tr>
-                <!-- for loop start  -->
                 <tr>
-                    <td>gig name rsvpd |</td>                           
+                    <td>{{user['title']}} at {{user['location']}} on {{user.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{user.end_time.strftime('%I%p')}} |</td>                           
                     <td><a href="/rsvp_to_gig">Mark as Attended</a></td>  
                 </tr>
-                <!-- for loop end -->
             </table> 
 
         </div>
