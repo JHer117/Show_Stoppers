@@ -37,6 +37,14 @@ body{
     right: 1%;
 }
 
+#valid_username h4{
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+
 hr{
     border: 2px solid rgb(47,35,63);
     
