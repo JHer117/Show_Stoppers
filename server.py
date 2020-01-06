@@ -103,16 +103,14 @@ def registration():
 def acct():
     if SESSION_KEY not in session:
         return redirect("/")
-    
-    # MAKE QUERIES FOR "GIGS ATTENDE", "GIGS RSVPD"
-    
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT * FROM users WHERE users.id = %(data_id)s"
+    query = "SELECT users.*, attendedgigs.attendedGig, shows.*, band.title, venue.location FROM users LEFT JOIN attendedgigs ON users.id = attendedgigs.users_id LEFT JOIN shows ON attendedgigs.shows_id = shows.id LEFT JOIN band ON shows.band_id=band.id LEFT JOIN venue ON shows.venue_id=venue.id WHERE users.id = %(data_id)s"
     data = {
         "data_id": session[SESSION_KEY]
     }
     user = mysql.query_db(query, data)
     session['user_id']
+    print(user)
     return render_template("account.html", user=user[0])
 @app.route("/logout")
 def logout():
@@ -271,6 +269,7 @@ def gigs():
     bandN = mysql.query_db(query)
     session.get('user_id')
     print(session.get('user_id'))
+    print(bandN)
     return render_template("gigs.html", shows = bandN)        
 #GIG RSVPD BUTTON ROUTE
 @app.route("/gig_Select", methods=['POST'])
@@ -278,10 +277,10 @@ def gigSelect():
     if SESSION_KEY not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
-    query = "INSERT INTO attendedGigs (shows_id, users_id, attendedGig) VALUES %(sid)s, %(uid)s, 0"
+    query = "INSERT INTO attendedGigs (shows_id, users_id, attendedGig) VALUES (%(sid)s, %(uid)s, 0)"
     data = {
         "uid": session.get('user_id'),
-        "sid": request.form['mainID']
+        "sid": int(request.form['mainID'])
     }
     mysql.query_db(query, data)
     flash("Data Successful")
