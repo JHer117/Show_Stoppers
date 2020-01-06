@@ -270,8 +270,7 @@ def gigs():
     session.get('user_id')
     print(session.get('user_id'))
     print(bandN)
-    return render_template("gigs.html", shows = bandN)        
-#GIG RSVPD BUTTON ROUTE
+    return render_template("gigs.html", shows = bandN)
 @app.route("/gig_Select", methods=['POST'])
 def gigSelect():
     if SESSION_KEY not in session:
