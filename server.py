@@ -104,7 +104,7 @@ def acct():
     if "user_id" not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT users.first_name, users.last_name FROM users WHERE users.id = %(users_id)s"
+    query = "SELECT users.first_name, users.last_name, users.id FROM users WHERE users.id = %(users_id)s"
     data = {
         "users_id": session['user_id']
     }
