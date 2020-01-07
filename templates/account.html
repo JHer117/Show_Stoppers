@@ -57,7 +57,7 @@
                         <tr>
                             <td>The {{gig.title}} at {{gig['location']}} on the {{gig.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{gig.end_time.strftime('%I%p')}}</td>
                             {% if gig.attendedGig %}
-                                <td>Already Attending</td>
+                                <td>Already Attended</td>
                             {% else %}
                                 <td><a href="/rsvp_to_gig/{{gig.attended_gig_id}}">Mark as  Attended</a></td>
                             {% endif %}
