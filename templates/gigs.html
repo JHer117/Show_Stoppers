@@ -44,7 +44,7 @@
                         <option  value="{{event['title'] }}">{{event['title']}}</option>
                     {% endfor %}
                 </select>
-                
+
                 <select id="select_venue">
                     <option selected="selected">Choose A Venue</option>
                     {% for event in shows %}
@@ -55,7 +55,7 @@
                 <select name ="mainID" id="select_date">
                     <option selected="selected">Choose A Date</option>      
                     {% for event in shows %}
-                        <option  value="{{event['id']}}">{{event.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{event.end_time.strftime('%I%p')}}</option>
+                        <option  value="{{event['id']}}">The {{event['title']}}, playing at {{event['location']}} on {{event.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{event.end_time.strftime('%I%p')}}</option>
                     {% endfor %}
                 </select> 
                 <!-- for loop end -->
