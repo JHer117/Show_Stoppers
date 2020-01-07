@@ -48,12 +48,22 @@
                 <tr>
                     <th>Gigs RSVP'd</th>                    
                 </tr>
-                {% for gig in user %}
+                {% if not attended_gigs %}
                 <tr>
-                    <td>{{gig.title}} at {{gig['location']}}</td>
-                    <td><a href="/rsvp_to_gig">Mark as Attended</a></td>  
+                    <td>Not attending anything.</td>
                 </tr>
-                {% endfor %}
+                {% else %}
+                    {% for gig in attended_gigs %}
+                        <tr>
+                            <td>The {{gig.title}} at {{gig['location']}} on the {{gig.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{gig.end_time.strftime('%I%p')}}</td>
+                            {% if gig.attendedGig %}
+                                <td>Already Attending</td>
+                            {% else %}
+                                <td><a href="/rsvp_to_gig/{{gig.attended_gig_id}}">Mark as  Attended</a></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
             </table> 
 
         </div>

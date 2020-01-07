@@ -101,17 +101,29 @@ def registration():
     return redirect("/")
 @app.route("/ShowStoppers")
 def acct():
-    if SESSION_KEY not in session:
+    if "user_id" not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
-    query = "SELECT users.*, attendedgigs.attendedGig, shows.*, band.title, venue.location FROM users LEFT JOIN attendedgigs ON users.id = attendedgigs.users_id LEFT JOIN shows ON attendedgigs.shows_id = shows.id LEFT JOIN band ON shows.band_id=band.id LEFT JOIN venue ON shows.venue_id=venue.id WHERE users.id = %(data_id)s"
+    query = "SELECT users.first_name, users.last_name FROM users WHERE users.id = %(users_id)s"
     data = {
-        "data_id": session[SESSION_KEY]
+        "users_id": session['user_id']
     }
     user = mysql.query_db(query, data)
+    mysql = connectToMySQL("ShowStoppers")
+    query = "SELECT users.id, users.first_name, users.last_name, attendedgigs.id AS attended_gig_id, attendedgigs.attendedGig, shows.id AS shows_id, shows.start_time, shows.end_time, band.title, venue.location FROM users JOIN attendedgigs ON users.id = attendedgigs.users_id LEFT JOIN shows ON attendedgigs.shows_id = shows.id LEFT JOIN band ON shows.band_id=band.id LEFT JOIN venue ON shows.venue_id=venue.id WHERE users.id = %(users_id)s"
+    attended_gigs = mysql.query_db(query, data)
     session['user_id']
     print(user)
-    return render_template("account.html", user=user[0])
+    return render_template("account.html", user=user[0], attended_gigs=attended_gigs)
+@app.route("/rsvp_to_gig/<attended_gig_id>")
+def rsvp(attended_gig_id):
+    mysql = connectToMySQL("ShowStoppers")
+    query = "UPDATE attendedgigs SET attendedgigs.attendedGig = TRUE WHERE attendedgigs.id = %(attended_gig_id)s"
+    data = {
+        "attended_gig_id": attended_gig_id,
+    }
+    mysql.query_db(query, data)
+    return redirect("/ShowStoppers")
 @app.route("/logout")
 def logout():
     session.clear()
@@ -276,13 +288,17 @@ def gigSelect():
     if SESSION_KEY not in session:
         return redirect("/")
     mysql = connectToMySQL("ShowStoppers")
-    query = "INSERT INTO attendedGigs (shows_id, users_id, attendedGig) VALUES (%(sid)s, %(uid)s, 0)"
+    query = "SELECT * FROM attendedGigs WHERE (shows_id = %(sid)s AND users_id = %(uid)s)"
     data = {
+        "sid": int(request.form['mainID']),
         "uid": session.get('user_id'),
-        "sid": int(request.form['mainID'])
     }
-    mysql.query_db(query, data)
-    flash("Data Successful")
+    attended_gigs = mysql.query_db(query, data)
+    if not attended_gigs:
+        mysql = connectToMySQL("ShowStoppers")
+        query = "INSERT INTO attendedGigs (shows_id, users_id, attendedGig) VALUES  (%(sid)s, %(uid)s, 0)"
+        mysql.query_db(query, data)
+        flash("Data Successful")
     return redirect("/gigs")
 if __name__=="__main__":
     app.run(debug=True)
