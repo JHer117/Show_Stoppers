@@ -43,13 +43,15 @@
                     {% for event in shows %}
                         <option  value="{{event['title'] }}">{{event['title']}}</option>
                     {% endfor %}
-                </select> 
+                </select>
+                
                 <select id="select_venue">
                     <option selected="selected">Choose A Venue</option>
                     {% for event in shows %}
                         <option  value="{{event['location']}}">{{event['location']}}</option>
                     {% endfor %}
-                </select> 
+                </select>
+                
                 <select name ="mainID" id="select_date">
                     <option selected="selected">Choose A Date</option>      
                     {% for event in shows %}
