@@ -68,15 +68,9 @@ hr{
 }
 
 
-#gigs_attended{
-    display: inline-block;
-    
-}
-
 #gigs_rsvp{
     display: inline-block;
-    margin-right: 85px;
-    margin-left: 0px;
+    margin-left: 120px;
 }
 
 
@@ -84,16 +78,6 @@ hr{
     color: rgb(242,19,219);
     
 }
-
-#gigs_attended th{
-    border-radius: 4px;
-    display: inline-block;
-    border-style:groove groove none none;
-    border-color: rgb(2,231,247);
-    color: rgb(242,19,219);
-    margin-bottom: 20px;
-}
-
 
 
 #gigs_rsvp th{

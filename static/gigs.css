@@ -36,10 +36,11 @@ body{
     margin-top: 45px;
 }
 
+
 #gig_choices{
-    text-align: initial;
+    text-align: center;
     margin-top: 190px;
-    padding-left: 400px;
+    margin-left: 36%;
 }
 
 #gig_choices select{
@@ -47,13 +48,7 @@ body{
     color: rgb(242,19,219);
 }
 
-#select_band{
-    margin-bottom: 40px;
-}
 
-#select_venue{
-    margin-bottom: 40px;
-}
 
 #select_date{
     margin-bottom: 40px;
@@ -62,16 +57,14 @@ body{
 #rsvp_btn{
     background-color: rgb(110,26,143);
     color:rgb(2,231,247);
-    display: inline-block;
-    margin-top: 135px;
+    display: block;
+    margin-top: 100px;
     margin-bottom: 50px;
     padding: 1%;
     width: 174px;
     border: 3px inset rgb(47,35,63);
     border-radius: 5px;
-    position: absolute;
-    right: 400px;
-    top: 280px;
+    margin-left: 17%;
 
 }
 
