@@ -37,20 +37,6 @@
         <div id="gig_choices">
 
             <form action="/gig_Select" method="POST">
-                <!-- for loop start -->
-                <select id="select_band">
-                    <option selected="selected">Choose A Band</option>
-                    {% for event in shows %}
-                        <option  value="{{event['title'] }}">{{event['title']}}</option>
-                    {% endfor %}
-                </select>
-                
-                <select id="select_venue">
-                    <option selected="selected">Choose A Venue</option>
-                    {% for event in shows %}
-                        <option  value="{{event['location']}}">{{event['location']}}</option>
-                    {% endfor %}
-                </select>
                 
                 <select name ="mainID" id="select_date">
                     <option selected="selected">Choose A Date</option>      
@@ -58,7 +44,7 @@
                         <option  value="{{event['id']}}">{{event.start_time.strftime('%m-%d-%Y' " from " '%I%p')}} to {{event.end_time.strftime('%I%p')}}</option>
                     {% endfor %}
                 </select> 
-                <!-- for loop end -->
+                
                 <input id="rsvp_btn" type="submit" value="RSVP">
             </form>
 
